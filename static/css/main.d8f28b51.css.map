@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.d8f28b51.css","mappings":"0FAEA,qBAMI,4BAAgC,CAFhC,WAAY,CACZ,UAEJ","sources":["index.css"],"sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');\n\nhtml,\nbody,\n#root,\n.app {\n    height: 100%;\n    width: 100%;\n    font-family: \"Inter\", sans-serif;\n}"],"names":[],"sourceRoot":""}
