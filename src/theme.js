@@ -44,6 +44,7 @@ export const themeSettings = {
     typography: {
         fontFamily: ["Inter", "sans-serif"].join(","),
         fontSize: 12,
+        color: '#fff',
         h1: {
             fontFamily: ["Inter", "sans-serif"].join(","),
             fontSize: 32,
@@ -56,24 +57,24 @@ export const themeSettings = {
             fontFamily: ["Inter", "sans-serif"].join(","),
             fontSize: 20,
             fontWeight: 800,
-            color: tokens.primary[100],
+            color: tokens.grey[100],
         },
         h4: {
             fontFamily: ["Inter", "sans-serif"].join(","),
             fontSize: 14,
             fontWeight: 600,
-            color: tokens.primary[100],
+            color: tokens.grey[100],
         },
         h5: {
             fontFamily: ["Inter", "sans-serif"].join(","),
             fontSize: 12,
             fontWeight: 400,
-            color: tokens.grey[500],
+            color: tokens.grey[100],
         },
         h6: {
             fontFamily: ["Inter", "sans-serif"].join(","),
             fontSize: 10,
-            color: tokens.grey[700],
+            color: tokens.grey[100],
         },
     }
 }

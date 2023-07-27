@@ -8,20 +8,29 @@ import {
     Button,
     Typography
 } from '@mui/material'
+import MyClock from './clock/MyClock';
+import Weather from './weather/Weather';
+import Calendar from './calendar/Calendar';
+import Vocab from './vocab/Vocab';
+import Music from './music/Music';
 
 const gridTemplateLargeScreens = `
     "a b c"
     "a b c"
+    "a b c"
     "a b d"
     "a b d"
-    "e f g"
-    "e f g"
+    "a b d"
+    "a b d"
+    "e f d"
+    "e f d"
+    "e f d"
 `
 
 const gridTemplateSmallScreens = `
     "c"
     "c"
-    "c"
+    "a"
     "a"
     "a"
     "a"
@@ -41,9 +50,6 @@ const gridTemplateSmallScreens = `
     "f"
     "f"
     "f"
-    "g"
-    "g"
-    "g"
 `
 
 const Dashboard = () => {
@@ -56,7 +62,7 @@ const Dashboard = () => {
             width='100%'
             height='100%'
             display='grid'
-            gap='4rem'
+            gap='1rem'
             sx={
                 isAboveMediumScreens ? {
                     gridTemplateColumns: "repeat(3, minmax(370px, 1fr))",
@@ -69,13 +75,27 @@ const Dashboard = () => {
                 }
             }
         >
-            <WidgetBox gridArea='a'></WidgetBox>
-            <WidgetBox gridArea='b'></WidgetBox>
-            <WidgetBox gridArea='c'></WidgetBox>
-            <WidgetBox gridArea='d'></WidgetBox>
-            <WidgetBox gridArea='e'></WidgetBox>
-            <WidgetBox gridArea='f'></WidgetBox>
-            <WidgetBox gridArea='g'></WidgetBox>
+            <WidgetBox gridArea='a'>
+                <Weather />
+            </WidgetBox>
+
+            <WidgetBox gridArea='b'>
+                <Calendar />
+            </WidgetBox>
+
+            <WidgetBox gridArea='c'>
+                <MyClock />
+            </WidgetBox>
+            
+            <WidgetBox gridArea='d'>CALCULATOR</WidgetBox>
+            
+            <WidgetBox gridArea='e'>
+                <Vocab />
+            </WidgetBox>
+            
+            <WidgetBox gridArea='f'>
+                <Music />
+            </WidgetBox>
         </Box>
     )
 }

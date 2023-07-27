@@ -10,7 +10,6 @@ const Header = () => {
     <FlexBetween 
         gap="1.5rem" 
         color={palette.primary[100]} 
-        mb='.75rem' 
         bgcolor={palette.primary[400]}
         padding='.75rem .75rem .75rem .75rem'
     >

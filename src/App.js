@@ -18,7 +18,6 @@ function App() {
         <CssBaseline />
         <Header />
         <Box width='100%' height='100%' padding='1rem 2rem 4rem 2rem'>
-          
           <Dashboard />
         </Box>
       </ThemeProvider>
