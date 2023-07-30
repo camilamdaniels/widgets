@@ -13,6 +13,7 @@ import Weather from './weather/Weather';
 import Calendar from './calendar/Calendar';
 import Vocab from './vocab/Vocab';
 import Music from './music/Music';
+import News from './news/News';
 
 const gridTemplateLargeScreens = `
     "a b c"
@@ -36,6 +37,9 @@ const gridTemplateSmallScreens = `
     "a"
     "a"
     "a"
+    "d"
+    "d"
+    "d"
     "d"
     "d"
     "d"
@@ -69,7 +73,7 @@ const Dashboard = () => {
                     gridTemplateRows: "repeat(10, minmax(60px, 1fr))",
                     gridTemplateAreas: gridTemplateLargeScreens
                 } : {
-                    gridAutoColumns: "1fr",
+                    gridAutoColumns: ".75fr",
                     gridAutoRows: "80px",
                     gridTemplateAreas: gridTemplateSmallScreens
                 }
@@ -87,7 +91,9 @@ const Dashboard = () => {
                 <MyClock />
             </WidgetBox>
             
-            <WidgetBox gridArea='d'>CALCULATOR</WidgetBox>
+            <WidgetBox gridArea='d'>
+                <News />
+            </WidgetBox>
             
             <WidgetBox gridArea='e'>
                 <Vocab />
