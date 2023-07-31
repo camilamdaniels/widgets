@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { 
     Box,
     Card,
@@ -7,10 +7,11 @@ import {
     Typography
 } from '@mui/material'
 import Button from '@mui/material/Button'
+import { newWord } from './words'
 
 const bull = (
-    <Box
-        component='span'
+    <Box 
+        component='span' 
         sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
     >
         .
@@ -18,26 +19,38 @@ const bull = (
 )
 
 export default function Vocab() {
+    const [word, setWord] = useState(newWord())
+
+    // console.log(word)
+
+    let phonetic = word.phoneticSpelling.split(/\s*\-\s*/g)
+    // console.log(phonetic)
+
+    const handleClick = () => {
+        setWord(newWord())
+    }
+
     return (
         <Card sx={{ width: "100%", backgroundColor: '#66d6a2', height: "100%", borderRadius: '1rem' }}>
             <CardContent>
                 <Typography sx={{ fontSize: 14}} color='#fff' gutterBottom>
                     Word of the Day
                 </Typography>
-                <Typography variant='h5' component='div'>
-                    be{bull}nev{bull}o{bull}lent
+                <Typography sx={{ display: 'inline-block' }} variant='h5' component='div'>
+                    {phonetic.map((item, i) => <span key={i}>{item}{bull}</span>)}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color='#fff'>
-                    adjective
+                    {word.partOfSpeech}
                 </Typography>
                 <Typography color='#fff'>
-                    well meaning and kindly.
+                    {word.definition}
                     <br />
-                    {"a benevolent smile"}
+                    <br />
+                    <em>{word.sentence}</em>
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">New Word</Button>
+                <Button onClick={() => handleClick()} size="small">New Word</Button>
             </CardActions>
         </Card>
     )
