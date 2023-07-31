@@ -39,7 +39,7 @@ const Weather = () => {
       //     })
       // }
 
-      console.log(process.env.REACT_APP_WB_API_KEY)
+      // console.log(process.env.REACT_APP_WB_API_KEY)
       const fetchData = async () => {
         await fetch (`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${process.env.REACT_APP_WB_API_KEY}&include=minutely`)
            .then(res => res.json())
@@ -54,7 +54,7 @@ const Weather = () => {
     // console.log(latitude)
     // console.log(longitude)
     // console.log(process.env.REACT_APP_API_KEY)
-    if (geodata) console.log(geodata.data[0].city_name)
+    // if (geodata) console.log(geodata.data[0].city_name)
 
     // const { data, isLoading, errorMessage } = useOpenWeather({
     //     key: process.env.REACT_APP_API_KEY,
@@ -98,7 +98,7 @@ const Weather = () => {
             errorMessage={errorMessage}
             data={data}
             lang='en'
-            locationLabel={geodata ? geodata.data[0].city_name : ''} // try ternary w/ errorMessage
+            locationLabel={geodata.data ? geodata.data[0].city_name : ''} // try ternary w/ errorMessage
             unitsLabels={{ temperature: 'F', windSpeed: 'mph'}}
             showForecast
             theme={customStyles}
