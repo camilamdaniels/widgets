@@ -57,7 +57,7 @@ const gridTemplateSmallScreens = `
 `
 
 const Dashboard = () => {
-    const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)")
+    const isAboveMediumScreens = useMediaQuery("(min-width: 600px)")
     const { palette } = useTheme()
 
     return (
@@ -73,7 +73,7 @@ const Dashboard = () => {
                     gridTemplateRows: "repeat(10, minmax(60px, 1fr))",
                     gridTemplateAreas: gridTemplateLargeScreens
                 } : {
-                    gridAutoColumns: ".75fr",
+                    gridAutoColumns: "1fr",
                     gridAutoRows: "80px",
                     gridTemplateAreas: gridTemplateSmallScreens
                 }
