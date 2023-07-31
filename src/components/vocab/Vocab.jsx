@@ -33,13 +33,13 @@ export default function Vocab() {
     return (
         <Card sx={{ width: "100%", backgroundColor: '#66d6a2', height: "100%", borderRadius: '1rem' }}>
             <CardContent>
-                <Typography sx={{ fontSize: 14}} color='#fff' gutterBottom>
+                <Typography sx={{ fontSize: 14, mb: 1 }} color='#fff'>
                     Word of the Day
                 </Typography>
                 <Typography sx={{ display: 'inline-block' }} variant='h5' component='div'>
                     {phonetic.map((item, i) => <span key={i}>{item}{bull}</span>)}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color='#fff'>
+                <Typography sx={{ mb: 1.5 }} variant='h5' color='#fff'>
                     {word.partOfSpeech}
                 </Typography>
                 <Typography color='#fff'>
