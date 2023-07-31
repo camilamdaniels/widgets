@@ -14,7 +14,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert'
 
 const News = () => {
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: '#66d6a2', color: '#fff' }}>
+    <Card sx={{ width: "100%", height: "100%", bgcolor: '#66d6a2', color: '#fff' }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: '#e75480' }} aria-label='article'>

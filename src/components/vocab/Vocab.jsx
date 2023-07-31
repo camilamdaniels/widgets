@@ -19,7 +19,7 @@ const bull = (
 
 export default function Vocab() {
     return (
-        <Card sx={{ minWidth: 400, backgroundColor: '#66d6a2', maxHeight: 200 }}>
+        <Card sx={{ width: "100%", backgroundColor: '#66d6a2', height: "100%", borderRadius: '1rem' }}>
             <CardContent>
                 <Typography sx={{ fontSize: 14}} color='#fff' gutterBottom>
                     Word of the Day
