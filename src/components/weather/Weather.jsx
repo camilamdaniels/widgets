@@ -98,7 +98,7 @@ const Weather = () => {
             errorMessage={errorMessage}
             data={data}
             lang='en'
-            locationLabel={geodata ? geodata[0].name : ''} // try ternary w/ errorMessage
+            locationLabel={geodata.length > 0 ? geodata[0].name : ''} // try ternary w/ errorMessage
             unitsLabels={{ temperature: 'F', windSpeed: 'mph'}}
             showForecast
             theme={customStyles}
