@@ -22,13 +22,14 @@ const Weather = () => {
       console.log(latitude)
       console.log(longitude)
 
-      // const fetchData = async () => {
-      //   await fetch(`${process.env.REACT_APP_API_URL}/reverse?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY}`)
-      //   .then(result => {
-      //     setGeodata(result)
-      //     // console.log(result);
-      //   });
-      // }
+      const fetchData = async () => {
+        await fetch(`${process.env.REACT_APP_API_URL}/reverse?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY}`)
+          .then(res => res.json())
+          .then(result => {
+            setGeodata(result)
+            // console.log(result);
+          });
+      }
 
       // const fetchData = async () => {
       //   await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latitude},${longitude}?key=${process.env.REACT_APP_VC_API_KEY}`)
@@ -39,30 +40,29 @@ const Weather = () => {
       //     })
       // }
 
-      // console.log(process.env.REACT_APP_WB_API_KEY)
-      const fetchData = async () => {
-        await fetch (`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${process.env.REACT_APP_WB_API_KEY}&include=minutely`)
-           .then(res => res.json())
-              .then(result => {
-            setGeodata(result)
-            console.log(result)
-          })
-      }
+      // const fetchData = async () => {
+      //   await fetch (`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${process.env.REACT_APP_WB_API_KEY}&include=minutely`)
+      //      .then(res => res.json())
+      //         .then(result => {
+      //       setGeodata(result)
+      //       console.log(result)
+      //     })
+      // }
       fetchData()
     }, [latitude, longitude])
 
     // console.log(latitude)
     // console.log(longitude)
     // console.log(process.env.REACT_APP_API_KEY)
-    // if (geodata) console.log(geodata.data[0].city_name)
+    if (geodata) console.log(geodata)
 
-    // const { data, isLoading, errorMessage } = useOpenWeather({
-    //     key: process.env.REACT_APP_API_KEY,
-    //     lat: latitude ? latitude : '48.137154',
-    //     lon: longitude ? longitude: '11.576124',
-    //     lang: 'en',
-    //     unit: 'imperial'
-    // })
+    const { data, isLoading, errorMessage } = useOpenWeather({
+        key: process.env.REACT_APP_API_KEY,
+        lat: latitude ? latitude : '48.137154',
+        lon: longitude ? longitude: '11.576124',
+        lang: 'en',
+        unit: 'imperial'
+    })
 
     // const { data, isLoading, errorMessage } = useVisualCrossing({
     //   key: process.env.REACT_APP_VC_API_KEY,
@@ -72,13 +72,13 @@ const Weather = () => {
     //   unit: 'us'
     // })
 
-    const { data, isLoading, errorMessage } = useWeatherBit({
-      key: process.env.REACT_APP_WB_API_KEY,
-      lat: latitude ? latitude : '48.137154',
-      lon: longitude ? longitude : '11.576124',
-      lang: 'en',
-      unit: 'I'
-    })
+    // const { data, isLoading, errorMessage } = useWeatherBit({
+    //   key: process.env.REACT_APP_WB_API_KEY,
+    //   lat: latitude ? latitude : '48.137154',
+    //   lon: longitude ? longitude : '11.576124',
+    //   lang: 'en',
+    //   unit: 'I'
+    // })
 
     const customStyles = {
         fontFamily: 'Inter, sans-serif',
@@ -98,7 +98,7 @@ const Weather = () => {
             errorMessage={errorMessage}
             data={data}
             lang='en'
-            locationLabel={geodata.data ? geodata.data[0].city_name : ''} // try ternary w/ errorMessage
+            locationLabel={geodata ? geodata[0].name : ''} // try ternary w/ errorMessage
             unitsLabels={{ temperature: 'F', windSpeed: 'mph'}}
             showForecast
             theme={customStyles}
