@@ -26,6 +26,7 @@ const Weather = () => {
         await fetch(`${process.env.REACT_APP_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY}`)
           .then(res => {
               res.json()
+              console.log("response:")
               console.log(res)
           })
           .then(result => {
