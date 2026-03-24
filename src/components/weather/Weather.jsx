@@ -23,7 +23,7 @@ const Weather = () => {
       console.log(longitude)
 
       const fetchData = async () => {
-        await fetch(`${process.env.REACT_APP_API_URL}/reverse?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY}`)
+        await fetch(`${process.env.REACT_APP_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_API_KEY}`)
           .then(res => res.json())
           .then(result => {
             setGeodata(result)
