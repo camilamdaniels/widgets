@@ -27,7 +27,7 @@ const Weather = () => {
           .then(res => res.json())
           .then(result => {
             setGeodata(result)
-            // console.log(result);
+            console.log(result);
           });
       }
 
